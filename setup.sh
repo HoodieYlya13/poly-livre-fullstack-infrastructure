@@ -23,4 +23,7 @@ UPSTASH_REDIS_REST_TOKEN="dummy_token_for_testing_purposes"
 EOF
 fi
 
+echo "Installing frontend dependencies..."
+(cd ../poly-livre-frontend && npm install)
+
 docker compose up --build
