@@ -12,4 +12,15 @@ if [ ! -d "poly-livre-frontend" ]; then
 fi
 
 cd poly-livre-fullstack-infrastructure
+
+if [ -f ".env.local" ]; then
+  cp .env.local ../poly-livre-frontend/.env.local
+else
+  cat <<EOF > ../poly-livre-frontend/.env.local
+NEXT_PUBLIC_TESTING_MODE=true
+UPSTASH_REDIS_REST_URL="https://example.upstash.io"
+UPSTASH_REDIS_REST_TOKEN="dummy_token_for_testing_purposes"
+EOF
+fi
+
 docker compose up --build
