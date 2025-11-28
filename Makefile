@@ -12,6 +12,7 @@ help:
 	@echo "  make clean       - Remove containers, images, volumes"
 
 init:
+	chmod +x setup.sh
 	./setup.sh
 
 start:
