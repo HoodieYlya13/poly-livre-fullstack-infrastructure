@@ -18,8 +18,9 @@ if [ -f ".env.local" ]; then
 else
   cat <<EOF > ../poly-livre-frontend/.env.local
 NEXT_PUBLIC_TESTING_MODE=true
-UPSTASH_REDIS_REST_URL="https://example.upstash.io"
-UPSTASH_REDIS_REST_TOKEN="dummy_token_for_testing_purposes"
+UPSTASH_REDIS_REST_URL=""
+UPSTASH_REDIS_REST_TOKEN=""
+NEXT_PUBLIC_API_URL=http://localhost:8080
 EOF
 fi
 
